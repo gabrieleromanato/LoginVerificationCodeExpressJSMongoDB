@@ -4,5 +4,6 @@
 2. Create a `users` collection on the newly created database
 3. Update the `config.js` file with your database connection details and SMTP settings
 4. Start MongoDB
-5. Run `npm start` in the Terminal/shell.
+5. Run `npm install` in the Terminal/shell
+6. Run `npm start` in the Terminal/shell.
 
