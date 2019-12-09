@@ -67,7 +67,7 @@ app.post('/signup', async (req, res) => {
             
             if(!existingUser) {
                 const newUser = new User(req, email, password);
-                const insertUserQuery = await users.insertOne(newUser.getData);
+                await users.insertOne(newUser.getData);
             }
 
         
