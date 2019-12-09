@@ -1,0 +1,37 @@
+<%- include('header') %>
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Login</h1>
+        <form action="/login" method="post" novalidate>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+            <% if(typeof loginError === 'string') { %><div class="alert alert-danger mt-4"><%= loginError %></div> <% } %>
+            <p><input type="submit" class="btn btn-primary" value="Login"></p>
+        </form>
+    </div>
+    <div class="col-md-5 offset-md-1">
+        <h1>Sign Up</h1>
+        <form action="/signup" method="post" novalidate>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control">
+                <% if(typeof signupErrors === 'object' && signupErrors.email) { %> <div class="alert alert-danger mt-4"><%= signupErrors.email %></div> <% } %>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" name="password" class="form-control">
+                <% if(typeof signupErrors === 'object' && signupErrors.password) { %> <div class="alert alert-danger mt-4"><%= signupErrors.password %></div> <% } %>
+            </div>
+            <p><input type="submit" class="btn btn-primary" value="Sign up"></p>
+        </form>
+    </div>
+</div>
+
+<%- include('footer') %>

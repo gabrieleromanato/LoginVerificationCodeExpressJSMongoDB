@@ -1,0 +1,14 @@
+<%- include('header') %>
+
+<h1>Verification required</h1>
+<p class="lead">Enter the verification code we sent you via email.</p>
+
+<form action="/auth" method="post" novalidate>
+    <div class="form-group">
+        <input type="text" name="token" class="form-control">
+    </div>
+    <% if(typeof authError === 'string') { %><div class="alert alert-danger mt-4"><%= authError %></div> <% } %>
+    <p><input type="submit" class="btn btn-primary" value="Verify"></p>
+</form>
+
+<%- include('footer') %>
